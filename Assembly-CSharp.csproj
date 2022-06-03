@@ -56,12 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Project\Scripts\Camera\Parallax.cs" />
     <Compile Include="Assets\Project\Scripts\Traps\FallBlock.cs" />
     <Compile Include="Assets\Project\Controls\UserInput.cs" />
     <Compile Include="Assets\Project\Scripts\Character\CharacterMovement.cs" />
     <Compile Include="Assets\Project\Scripts\Character\CharacterHealth.cs" />
     <Compile Include="Assets\Project\Scripts\Components\GroundDetector.cs" />
-    <Compile Include="Assets\Project\Scripts\Components\EventCollisionComponent.cs" />
+    <Compile Include="Assets\Project\Scripts\Traps\SawMoveHorizontal.cs" />
+    <Compile Include="Assets\Project\Scripts\Components\EnterTriggerComponent.cs" />
+    <Compile Include="Assets\Project\Scripts\Components\DestroyObjectComponent.cs" />
+    <Compile Include="Assets\Project\Scripts\Components\ReloadLevelComponent.cs" />
+    <Compile Include="Assets\Project\Scripts\Components\SpriteAnimatorComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -702,6 +707,12 @@
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>

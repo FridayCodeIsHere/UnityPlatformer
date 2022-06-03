@@ -6,7 +6,6 @@ namespace Platformer
     public class GroundDetector : MonoBehaviour
     {
         [SerializeField] private LayerMask _layerMask;
-        [SerializeField] private LayerMask _layerMask2;
         private Collider2D _collider;
         public bool IsGround { get; private set; }
 

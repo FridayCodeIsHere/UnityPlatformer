@@ -7,6 +7,7 @@ namespace Platformer
     public class FallBlock : MonoBehaviour
     {
         [SerializeField] private float _timeToFall = 0f;
+        private Rigidbody2D _rigidbody;
 
         #region MonoBehaviour
         private void OnValidate()
@@ -15,17 +16,10 @@ namespace Platformer
         }
         #endregion
 
-        private Rigidbody2D _rigidbody;
-
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-        }
-
-        public void Drop()
-        {
-            StartCoroutine(DropBlock());
         }
 
         private IEnumerator DropBlock()
@@ -33,6 +27,14 @@ namespace Platformer
             yield return new WaitForSeconds(_timeToFall);
             _rigidbody.isKinematic = false;
             _rigidbody.gravityScale = 2f;
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.transform.GetComponent<CharacterHealth>())
+            {
+                StartCoroutine(DropBlock());
+            }
         }
     }
 
